@@ -6,12 +6,16 @@ public class Course {
     private String number;
     private String title;
     private int units;
-    Person person;
 
-    public Course(String number, String title, int units, Person person) {
+    public Course(String number, String title, int units) {
         this.number = number;
         this.title = title;
         this.units = units;
-        this.person = person;
+//        this.person = person;
     }
+
+    public int getUnits() {
+        return units;
+    }
+
 }

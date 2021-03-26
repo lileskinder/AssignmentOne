@@ -59,15 +59,24 @@ public class Main
 
          // Create course objects
 
-         /* The below is giving a faculty reference as the last argument.  This is a Mistake since it is one directional.  The  ‘1’  next to the Faculty class in the class diagram is Not implemented in the Course class.  It is there only to show us that a course is taught by only one faculty.
+         /* The below is giving a faculty reference as the last argument.  This is a Mistake since it is one directional.
+         The  ‘1’  next to the Faculty class in the class diagram is Not implemented in the Course class.
+          It is there only to show us that a course is taught by only one faculty.
          However, this mistake below does show us How we could implement the code IF it was two-directional!  */
 
-        Course cs201 = new Course("cs201","programming",4, johnDoodle);
-        Course cs360 = new Course("cs360","database",3, samHoward);
-        Course cs404 = new Course("cs404","compiler",4, johnDoodle);
-        Course cs240 = new Course("cs240","datastructure",2, johnDoodle);
-        Course cs301 = new Course("cs301","Software engg",3, samHoward);
-        Course cs450 = new Course("cs450","Advanced architecture",5,frankMoore);
+        Course cs201 = new Course("cs201","programming",4);
+        Course cs360 = new Course("cs360","database",3);
+        Course cs404 = new Course("cs404","compiler",4);
+        Course cs240 = new Course("cs240","datastructure",2);
+        Course cs301 = new Course("cs301","Software engg",3);
+        Course cs450 = new Course("cs450","Advanced architecture",5);
+
+        johnDoodle.addCourse(cs201);
+        samHoward.addCourse(cs360);
+        johnDoodle.addCourse(cs404);
+        johnDoodle.addCourse(cs240);
+        samHoward.addCourse(cs301);
+        frankMoore.addCourse(cs450);
 
         /*
          * The above course objects will go inside either
@@ -104,6 +113,7 @@ public class Main
                     break;
                 case 'u':
                     dept.unitsPerFaculty();
+                   // System.out.println(dept.unitsPerFaculty());
                     break;
                 case 'q': return;
                 default:

@@ -14,4 +14,8 @@ public class Student extends Person {
     public String getType() {
         return this.type;
     }
+
+    public int getTotalUnits() {
+        return super.getTotalUnits();
+    }
 }
